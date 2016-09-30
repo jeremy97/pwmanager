@@ -19,9 +19,18 @@ namespace pwmanager {
             OpenFileDialog ofd = new OpenFileDialog();
             //ofd.Filter = "Password DB Files|*.pwdb";
             if(ofd.ShowDialog() == DialogResult.OK) {
-                int trimAmt = ofd.FileName.LastIndexOf('\\') + 1;
-                fileLbl.Text = "Selected file: " + ofd.FileName.Substring(trimAmt);
+                int trimLen = ofd.FileName.LastIndexOf('\\') + 1;
+                fileLbl.Text = "Selected file: " + ofd.FileName.Substring(trimLen);
+                pwText.Enabled = true;
+                unlockBtn.Enabled = true;
             }
+        }
+
+        private void pwText_TextChanged(object sender, EventArgs e) {
+            if (unlockBtn.Enabled == false && pwText.Text != "")
+                unlockBtn.Enabled = true;
+            if (pwText.Text == "")
+                unlockBtn.Enabled = false;
         }
     }
 }

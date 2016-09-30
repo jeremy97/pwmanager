@@ -1,0 +1,7 @@
+[master password hash]
+//all information below encrypted by original password
+[label]:[username]:[password]:[last changed date]
+[label]:[username]:[password]:[last changed date]
+[label]:[username]:[password]:[last changed date]
+...
+[checksum]
