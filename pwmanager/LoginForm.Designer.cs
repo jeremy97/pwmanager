@@ -24,10 +24,10 @@
         /// </summary>
         private void InitializeComponent() {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.openBtn = new System.Windows.Forms.Button();
-            this.fileLbl = new System.Windows.Forms.Label();
-            this.pwText = new System.Windows.Forms.TextBox();
             this.unlockBtn = new System.Windows.Forms.Button();
+            this.pwText = new System.Windows.Forms.TextBox();
+            this.fileLbl = new System.Windows.Forms.Label();
+            this.openBtn = new System.Windows.Forms.Button();
             this.createBtn = new System.Windows.Forms.Button();
             this.orLbl = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -48,17 +48,30 @@
             this.panel1.Size = new System.Drawing.Size(260, 115);
             this.panel1.TabIndex = 0;
             // 
-            // openBtn
+            // unlockBtn
             // 
-            this.openBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.unlockBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.openBtn.Location = new System.Drawing.Point(3, 3);
-            this.openBtn.Name = "openBtn";
-            this.openBtn.Size = new System.Drawing.Size(252, 23);
-            this.openBtn.TabIndex = 0;
-            this.openBtn.Text = "Open Password File...";
-            this.openBtn.UseVisualStyleBackColor = true;
-            this.openBtn.Click += new System.EventHandler(this.openBtn_Click);
+            this.unlockBtn.Enabled = false;
+            this.unlockBtn.Location = new System.Drawing.Point(3, 84);
+            this.unlockBtn.Name = "unlockBtn";
+            this.unlockBtn.Size = new System.Drawing.Size(252, 23);
+            this.unlockBtn.TabIndex = 3;
+            this.unlockBtn.Text = "Unlock";
+            this.unlockBtn.UseVisualStyleBackColor = true;
+            this.unlockBtn.Click += new System.EventHandler(this.unlockBtn_Click);
+            // 
+            // pwText
+            // 
+            this.pwText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pwText.Enabled = false;
+            this.pwText.Location = new System.Drawing.Point(3, 58);
+            this.pwText.Name = "pwText";
+            this.pwText.PasswordChar = '*';
+            this.pwText.Size = new System.Drawing.Size(252, 20);
+            this.pwText.TabIndex = 2;
+            this.pwText.TextChanged += new System.EventHandler(this.pwText_TextChanged);
             // 
             // fileLbl
             // 
@@ -73,29 +86,17 @@
             this.fileLbl.TabIndex = 1;
             this.fileLbl.Text = "Selected file: None";
             // 
-            // pwText
+            // openBtn
             // 
-            this.pwText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.openBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pwText.Enabled = false;
-            this.pwText.Location = new System.Drawing.Point(3, 58);
-            this.pwText.Name = "pwText";
-            this.pwText.PasswordChar = '*';
-            this.pwText.Size = new System.Drawing.Size(252, 20);
-            this.pwText.TabIndex = 2;
-            this.pwText.TextChanged += new System.EventHandler(this.pwText_TextChanged);
-            // 
-            // unlockBtn
-            // 
-            this.unlockBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.unlockBtn.Enabled = false;
-            this.unlockBtn.Location = new System.Drawing.Point(3, 84);
-            this.unlockBtn.Name = "unlockBtn";
-            this.unlockBtn.Size = new System.Drawing.Size(252, 23);
-            this.unlockBtn.TabIndex = 3;
-            this.unlockBtn.Text = "Unlock";
-            this.unlockBtn.UseVisualStyleBackColor = true;
+            this.openBtn.Location = new System.Drawing.Point(3, 3);
+            this.openBtn.Name = "openBtn";
+            this.openBtn.Size = new System.Drawing.Size(252, 23);
+            this.openBtn.TabIndex = 0;
+            this.openBtn.Text = "Open Password File...";
+            this.openBtn.UseVisualStyleBackColor = true;
+            this.openBtn.Click += new System.EventHandler(this.openBtn_Click);
             // 
             // createBtn
             // 
@@ -122,6 +123,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.createBtn);
             this.panel2.Location = new System.Drawing.Point(12, 162);
             this.panel2.Name = "panel2";
