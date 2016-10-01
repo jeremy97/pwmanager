@@ -37,7 +37,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.unlockBtn);
             this.panel1.Controls.Add(this.pwText);
@@ -77,12 +77,12 @@
             // 
             this.fileLbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.fileLbl.AutoSize = true;
+            this.fileLbl.AutoEllipsis = true;
             this.fileLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fileLbl.ForeColor = System.Drawing.Color.White;
+            this.fileLbl.ForeColor = System.Drawing.Color.Black;
             this.fileLbl.Location = new System.Drawing.Point(3, 29);
             this.fileLbl.Name = "fileLbl";
-            this.fileLbl.Size = new System.Drawing.Size(110, 15);
+            this.fileLbl.Size = new System.Drawing.Size(252, 15);
             this.fileLbl.TabIndex = 1;
             this.fileLbl.Text = "Selected file: None";
             // 
@@ -100,9 +100,12 @@
             // 
             // createBtn
             // 
-            this.createBtn.Location = new System.Drawing.Point(4, 6);
+            this.createBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.createBtn.Location = new System.Drawing.Point(3, 6);
             this.createBtn.Name = "createBtn";
-            this.createBtn.Size = new System.Drawing.Size(252, 23);
+            this.createBtn.Size = new System.Drawing.Size(253, 23);
             this.createBtn.TabIndex = 2;
             this.createBtn.Text = "Create a new file";
             this.createBtn.UseVisualStyleBackColor = true;
@@ -122,7 +125,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.createBtn);
             this.panel2.Location = new System.Drawing.Point(12, 162);

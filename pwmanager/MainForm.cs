@@ -10,8 +10,18 @@ using System.Windows.Forms;
 
 namespace pwmanager {
     public partial class MainForm : Form {
+        private List<Info> info = new List<Info>();
         public MainForm() {
             InitializeComponent();
+        }
+
+        public MainForm(List<Info> userInfo) {
+            InitializeComponent();
+            info = userInfo;
+        }
+
+        private void MainForm_Load(object sender, EventArgs e) {
+
         }
     }
 }

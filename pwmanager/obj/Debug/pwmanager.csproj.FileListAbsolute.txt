@@ -7,3 +7,4 @@ e:\documents\visual studio 2015\Projects\pwmanager\pwmanager\obj\Debug\pwmanager
 e:\documents\visual studio 2015\Projects\pwmanager\pwmanager\obj\Debug\pwmanager.csproj.GenerateResource.Cache
 e:\documents\visual studio 2015\Projects\pwmanager\pwmanager\obj\Debug\pwmanager.exe
 e:\documents\visual studio 2015\Projects\pwmanager\pwmanager\obj\Debug\pwmanager.pdb
+e:\documents\visual studio 2015\Projects\pwmanager\pwmanager\obj\Debug\pwmanager.MainForm.resources
