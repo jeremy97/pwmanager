@@ -31,6 +31,9 @@
             this.createBtn = new System.Windows.Forms.Button();
             this.orLbl = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pwLoginLbl = new System.Windows.Forms.Label();
+            this.pwCreateLbl = new System.Windows.Forms.Label();
+            this.pwCreateText = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -39,6 +42,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.pwLoginLbl);
             this.panel1.Controls.Add(this.unlockBtn);
             this.panel1.Controls.Add(this.pwText);
             this.panel1.Controls.Add(this.fileLbl);
@@ -66,10 +70,10 @@
             this.pwText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pwText.Enabled = false;
-            this.pwText.Location = new System.Drawing.Point(3, 58);
+            this.pwText.Location = new System.Drawing.Point(70, 58);
             this.pwText.Name = "pwText";
             this.pwText.PasswordChar = '*';
-            this.pwText.Size = new System.Drawing.Size(252, 20);
+            this.pwText.Size = new System.Drawing.Size(185, 20);
             this.pwText.TabIndex = 2;
             this.pwText.TextChanged += new System.EventHandler(this.pwText_TextChanged);
             // 
@@ -100,19 +104,20 @@
             // 
             // createBtn
             // 
-            this.createBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.createBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.createBtn.Location = new System.Drawing.Point(3, 6);
+            this.createBtn.Enabled = false;
+            this.createBtn.Location = new System.Drawing.Point(3, 29);
             this.createBtn.Name = "createBtn";
-            this.createBtn.Size = new System.Drawing.Size(253, 23);
+            this.createBtn.Size = new System.Drawing.Size(252, 23);
             this.createBtn.TabIndex = 2;
             this.createBtn.Text = "Create a new file";
             this.createBtn.UseVisualStyleBackColor = true;
+            this.createBtn.Click += new System.EventHandler(this.createBtn_Click);
             // 
             // orLbl
             // 
-            this.orLbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.orLbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.orLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.orLbl.ForeColor = System.Drawing.Color.Black;
@@ -125,30 +130,70 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.pwCreateLbl);
+            this.panel2.Controls.Add(this.pwCreateText);
             this.panel2.Controls.Add(this.createBtn);
             this.panel2.Location = new System.Drawing.Point(12, 162);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(260, 37);
+            this.panel2.Size = new System.Drawing.Size(260, 57);
             this.panel2.TabIndex = 3;
+            // 
+            // pwLoginLbl
+            // 
+            this.pwLoginLbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pwLoginLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pwLoginLbl.Location = new System.Drawing.Point(3, 58);
+            this.pwLoginLbl.Name = "pwLoginLbl";
+            this.pwLoginLbl.Size = new System.Drawing.Size(61, 20);
+            this.pwLoginLbl.TabIndex = 4;
+            this.pwLoginLbl.Text = "Password";
+            this.pwLoginLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pwCreateLbl
+            // 
+            this.pwCreateLbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pwCreateLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pwCreateLbl.Location = new System.Drawing.Point(3, 3);
+            this.pwCreateLbl.Name = "pwCreateLbl";
+            this.pwCreateLbl.Size = new System.Drawing.Size(61, 20);
+            this.pwCreateLbl.TabIndex = 6;
+            this.pwCreateLbl.Text = "Password";
+            this.pwCreateLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pwCreateText
+            // 
+            this.pwCreateText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pwCreateText.Location = new System.Drawing.Point(70, 3);
+            this.pwCreateText.Name = "pwCreateText";
+            this.pwCreateText.PasswordChar = '*';
+            this.pwCreateText.Size = new System.Drawing.Size(185, 20);
+            this.pwCreateText.TabIndex = 5;
+            this.pwCreateText.TextChanged += new System.EventHandler(this.pwCreateText_TextChanged);
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(284, 211);
+            this.ClientSize = new System.Drawing.Size(284, 231);
             this.Controls.Add(this.orLbl);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Log In";
+            this.Text = "Unlock";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -163,5 +208,8 @@
         private System.Windows.Forms.Label orLbl;
         private System.Windows.Forms.Button createBtn;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label pwLoginLbl;
+        private System.Windows.Forms.Label pwCreateLbl;
+        private System.Windows.Forms.TextBox pwCreateText;
     }
 }

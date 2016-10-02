@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Encrypt.cs" />
+    <Compile Include="FileHandler.cs" />
     <Compile Include="Info.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
