@@ -23,7 +23,7 @@ namespace pwmanager {
         private void openBtn_Click(object sender, EventArgs e) {
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Title = "Open a password database file";
-            //ofd.Filter = "Password DB Files|*.pwdb";
+            ofd.Filter = "Password DB Files|*.pwdb";
             if(ofd.ShowDialog() == DialogResult.OK) {
                 filePath = ofd.FileName;
                 int trimLen = ofd.FileName.LastIndexOf('\\') + 1;
@@ -52,9 +52,12 @@ namespace pwmanager {
             if(sfd.ShowDialog() == DialogResult.OK) {
                 filePath = sfd.FileName;
                 FileHandler.initFile(pwCreateText.Text, filePath);
-                MainForm mf = new MainForm(FileHandler.openFile(pwCreateText.Text, filePath));
-                mf.Show();
-                Close();
+                List<Info> info = FileHandler.openFile(pwCreateText.Text, filePath);
+                if (info != null) {
+                    MainForm mf = new MainForm();
+                    mf.Show();
+                    Close();
+                }
             }
         }
 

@@ -17,14 +17,12 @@ namespace pwmanager {
                 //Write password hash first line
                 sw.WriteLine(PasswordHash.HashPassword(password));
 
-                using (var md5 = MD5.Create()) {
-                    var binFormatter = new BinaryFormatter();
-                    var memStream = new MemoryStream();
-                    binFormatter.Serialize(memStream, info);
+                var binFormatter = new BinaryFormatter();
+                var memStream = new MemoryStream();
+                binFormatter.Serialize(memStream, info);
 
-                    sw.WriteLine(md5.ComputeHash(memStream.ToArray()).ToString());
-                    return info;
-                }
+                sw.WriteLine(PasswordHash.HashPassword(Encoding.Default.GetString(memStream.ToArray())));
+                return info;
             }
         }
 
@@ -43,13 +41,12 @@ namespace pwmanager {
                     }
 
                     //Write checksum
-                    using (var md5 = MD5.Create()) {
-                        var binFormatter = new BinaryFormatter();
-                        var memStream = new MemoryStream();
-                        binFormatter.Serialize(memStream, info);
+                    
+                    var binFormatter = new BinaryFormatter();
+                    var memStream = new MemoryStream();
+                    binFormatter.Serialize(memStream, info);
 
-                        sw.WriteLine(md5.ComputeHash(memStream.ToArray()).ToString());
-                    }
+                    sw.WriteLine(PasswordHash.HashPassword(Encoding.Default.GetString(memStream.ToArray())));
                 }
             }
             catch(Exception ex) {
@@ -62,8 +59,8 @@ namespace pwmanager {
         public static List<Info> openFile(string password, string path) {
             using (StreamReader sr = new StreamReader(path)) {
                 string hash = sr.ReadLine();
-
-                if (PasswordHash.HashPassword(password) == hash) {
+                MessageBox.Show(hash + "\n" + PasswordHash.HashPassword(password));
+                if (PasswordHash.ValidatePassword(PasswordHash.HashPassword(password), hash)) {
                     string line;
 
                     while ((line = sr.ReadLine()) != null) {
@@ -83,19 +80,17 @@ namespace pwmanager {
                         }
                         else {
                             //It's the checksum
-                            using (var md5 = MD5.Create()) {
-                                var binFormatter = new BinaryFormatter();
-                                var memStream = new MemoryStream();
-                                binFormatter.Serialize(memStream, userInfo);
-
-                                if (line == md5.ComputeHash(memStream.ToArray()).ToString()) {
-                                    //Hashes match, no tampering
-                                    return userInfo;
-                                }
-                                else {
-                                    MessageBox.Show("The file has been tampered with and cannot be opened.");
-                                    return null;
-                                }
+                            var binFormatter = new BinaryFormatter();
+                            var memStream = new MemoryStream();
+                            binFormatter.Serialize(memStream, userInfo);
+                     
+                            if (PasswordHash.ValidatePassword(PasswordHash.HashPassword(Encoding.Default.GetString(memStream.ToArray())), line)) {
+                                //Hashes match, no tampering
+                                return userInfo;
+                            }
+                            else {
+                                MessageBox.Show("The file has been tampered with and cannot be opened.");
+                                return null;
                             }
                         }
                     }
