@@ -36,7 +36,7 @@ namespace pwmanager {
             List<Info> info = FileHandler.openFile(pwText.Text, filePath);
             if(info != null) {
                 Hide();
-                MainForm mf = new MainForm();
+                MainForm mf = new MainForm(info, pwText.Text);
                 mf.FormClosed += (s, args) => Close();
                 mf.Show();
             }
@@ -56,7 +56,7 @@ namespace pwmanager {
                 List<Info> info = FileHandler.openFile(pwCreateText.Text, filePath);
                 if (info != null) {
                     Hide();
-                    MainForm mf = new MainForm();
+                    MainForm mf = new MainForm(info, pwText.Text);
                     mf.FormClosed += (s, args) => Close();
                     mf.Show();
                 }

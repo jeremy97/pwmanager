@@ -26,10 +26,9 @@ namespace pwmanager {
             }
         }
 
-        public static void saveFile(string password, string path) {
+        public static void saveFile(string password, string path, List<Info> info) {
             try {
                 using (StreamWriter sw = new StreamWriter(path)) {
-                    List<Info> info = new List<Info>();
                     //Write password hash first line
                     sw.WriteLine(PasswordHash.HashPassword(password));
 
@@ -37,7 +36,7 @@ namespace pwmanager {
                     for (int i = 0; i < info.Count; i++) {
                         Info temp = info[i];
                         sw.WriteLine(Encrypt.EncryptString(temp.label, password) + ":" + Encrypt.EncryptString(temp.username, password) + ":"
-                            + Encrypt.EncryptString(temp.password, password) + ":" + Encrypt.EncryptString(temp.date, password));
+                            + Encrypt.EncryptString(temp.password, password));
                     }
 
                     //Write checksum
@@ -70,11 +69,10 @@ namespace pwmanager {
                             //It's a line of account info
                             string[] split = line.Split(':');
                             Info temp = new Info();
-                            //Load values into Info data struct for organization
+                            //Load values into Info data structure for organization
                             temp.label = Encrypt.DecryptString(split[0], password);
                             temp.username = Encrypt.DecryptString(split[1], password);
                             temp.password = Encrypt.DecryptString(split[2], password);
-                            temp.date = Encrypt.DecryptString(split[3], password);
                             //Put the new Info object into a list
                             userInfo.Add(temp);
                         }

@@ -8,9 +8,13 @@ namespace pwmanager {
     [Serializable]
     public class Info {
         public Info() { }
+        public Info(string lbl, string un, string pw) {
+            label = lbl;
+            username = un;
+            password = pw;
+        }
         public string label { get; set; }
         public string username { get; set; }
         public string password { get; set; }
-        public string date { get; set; }
     }
 }
