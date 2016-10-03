@@ -59,7 +59,7 @@ namespace pwmanager {
         public static List<Info> openFile(string password, string path) {
             using (StreamReader sr = new StreamReader(path)) {
                 string hash = sr.ReadLine();
-                MessageBox.Show(hash + "\n" + PasswordHash.HashPassword(password));
+
                 if (PasswordHash.ValidatePassword(password, hash)) {
                     string line;
 
@@ -84,7 +84,7 @@ namespace pwmanager {
                             var memStream = new MemoryStream();
                             binFormatter.Serialize(memStream, userInfo);
                      
-                            if (PasswordHash.ValidatePassword(PasswordHash.HashPassword(Encoding.Default.GetString(memStream.ToArray())), line)) {
+                            if (PasswordHash.ValidatePassword(Encoding.Default.GetString(memStream.ToArray()), line)) {
                                 //Hashes match, no tampering
                                 return userInfo;
                             }

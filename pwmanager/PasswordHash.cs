@@ -15,7 +15,7 @@ namespace pwmanager {
             byte[] hash = rfc.GetBytes(20);
             byte[] salt = rfc.Salt;
 
-            return Convert.ToBase64String(salt) + ":" + Convert.ToBase64String(hash);
+            return Convert.ToBase64String(salt) + "|" + Convert.ToBase64String(hash);
         }
 
         public static string HashPassword(string password, byte[] salt) {
@@ -23,16 +23,14 @@ namespace pwmanager {
             rfc.IterationCount = 1000;
             byte[] hash = rfc.GetBytes(20);
 
-            return Convert.ToBase64String(salt) + ":" + Convert.ToBase64String(hash);
+            return Convert.ToBase64String(salt) + "|" + Convert.ToBase64String(hash);
         }
 
         public static bool ValidatePassword(string password, string saltHash) {
             //split[0] = salt, split[1] = hash
-            string[] split = saltHash.Split(':');
+            string[] split = saltHash.Split('|');
 
             byte[] salt = Convert.FromBase64String(split[0]);
-
-            MessageBox.Show(HashPassword(password, salt) + "\n\n" + saltHash, "blah");
 
             return HashPassword(password, salt) == saltHash;
         }

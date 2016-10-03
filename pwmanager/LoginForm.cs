@@ -35,9 +35,10 @@ namespace pwmanager {
         private void unlockBtn_Click(object sender, EventArgs e) {
             List<Info> info = FileHandler.openFile(pwText.Text, filePath);
             if(info != null) {
-                MainForm mf = new MainForm(info);
+                Hide();
+                MainForm mf = new MainForm();
+                mf.FormClosed += (s, args) => Close();
                 mf.Show();
-                Close();
             }
             else {
                 MessageBox.Show("Invalid file");
@@ -54,9 +55,10 @@ namespace pwmanager {
                 FileHandler.initFile(pwCreateText.Text, filePath);
                 List<Info> info = FileHandler.openFile(pwCreateText.Text, filePath);
                 if (info != null) {
+                    Hide();
                     MainForm mf = new MainForm();
+                    mf.FormClosed += (s, args) => Close();
                     mf.Show();
-                    Close();
                 }
             }
         }
