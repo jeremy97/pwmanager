@@ -60,7 +60,7 @@ namespace pwmanager {
             using (StreamReader sr = new StreamReader(path)) {
                 string hash = sr.ReadLine();
                 MessageBox.Show(hash + "\n" + PasswordHash.HashPassword(password));
-                if (PasswordHash.ValidatePassword(PasswordHash.HashPassword(password), hash)) {
+                if (PasswordHash.ValidatePassword(password, hash)) {
                     string line;
 
                     while ((line = sr.ReadLine()) != null) {
