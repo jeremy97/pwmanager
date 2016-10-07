@@ -20,6 +20,19 @@ namespace pwmanager {
             InitializeComponent();
         }
 
+        public LoginForm(string path) {
+            InitializeComponent();
+
+            if(path != "" && Path.GetExtension(path).ToLower() != ".pwdb") {
+                filePath = path;
+                int trimLen = path.LastIndexOf('\\') + 1;
+                fileLbl.Text = "Selected file: " + path.Substring(trimLen);
+            }
+            else {
+                MessageBox.Show("Openend file is not .pwdb file", "File Type Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void openBtn_Click(object sender, EventArgs e) {
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Title = "Open a password database file";

@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="pwmanager.exe" version="1.0.0.0" publicKeyToken="ab797d2a17fb5e74" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="1475823715_lock.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="pwmanager" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="pwmanager.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="pwmanager.exe" size="344040">
+      <assemblyIdentity name="pwmanager" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>/lfOGe/GMJWeqBD7oLqgIrfK8rOXloZG8WJHNVwBCXU=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="1475823715_lock.ico" size="107023">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>gxtcua/GeMEB3gxevTW3Yh9Jx3k43nEghkcyrw5scIY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="pwmanager.exe.config" size="189">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>6N7MliNbVJSIAIPrecIshMbZ7zEoKLr5SQvud4LDUOw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <fileAssociation extension=".pwdb" description="Password DB File" progid="pwdb" defaultIcon="1475823715_lock.ico" xmlns="urn:schemas-microsoft-com:clickonce.v1" />
+<publisherIdentity name="CN=DESKTOP-R5ORFB1\Jeremy" issuerKeyHash="440ab7cbe613c233c813303702d3e20e8270f552" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>i6GAU1RM4SiKjQGA2MNKb/VajWmCJszFSXhWwNJFkn4=</DigestValue></Reference></SignedInfo><SignatureValue>f1v/RD50sF2WiAvl8EVLIFHxdWx/aLVYaZF1btWK7YTTDcMbLb6LIXxS6XyvQDhzqmtDgadyle2/eGkkIdJPvzFsdlp18xJuXpwWnUgRj/WUcMA5d/47BdeLsUczE7zUU3s43rTP9L53xl2gYzJGPjeFL8tixEn9vmkCXMqZZDM=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>mXs6vP372wezDqqmkrBFkMwPuVMLn3mkKlPQfdp9UrjutbqyxF29eMOLLcsvtaEW5dmU0zbNVpZIQxyUGR/cPjeIqkcX1E1/sCzPyUX5365orHD7awmpwGxNcwGSL8JsDWPkBxRXgoFLwjUjOTUQ23ILhwprlH8HXgtlmsg28GE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="7e9245d2c0567849c5cc2682698d5af56f4ac3d880018d8a28e14c545380a18b" Description="" Url=""><as:assemblyIdentity name="pwmanager.exe" version="1.0.0.0" publicKeyToken="ab797d2a17fb5e74" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DESKTOP-R5ORFB1\Jeremy</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>O4lOn7MUQzJNsP6567OC2fxpE8QzJdnMVztClytjfug=</DigestValue></Reference></SignedInfo><SignatureValue>M9kURXrRnvy6mjQmoCNdgncJYKXsSmH6RwoArUW3IGxxUchIytSqw2luXsbHeT/Dh4ZV3+IvtY3jN4TLVQ/uJdf1Fm6+O5/GKlb8bbonZvMnDt/I9fpW27G7zOFt4JiBYXeuW0FGZVgocOj809xf/1ETaBvsIO3JMwhsfs8NxTE=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>mXs6vP372wezDqqmkrBFkMwPuVMLn3mkKlPQfdp9UrjutbqyxF29eMOLLcsvtaEW5dmU0zbNVpZIQxyUGR/cPjeIqkcX1E1/sCzPyUX5365orHD7awmpwGxNcwGSL8JsDWPkBxRXgoFLwjUjOTUQ23ILhwprlH8HXgtlmsg28GE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB8TCCAVqgAwIBAgIQRsgWr599o79Jv5V9sMXyejANBgkqhkiG9w0BAQsFADA3MTUwMwYDVQQDHiwARABFAFMASwBUAE8AUAAtAFIANQBPAFIARgBCADEAXABKAGUAcgBlAG0AeTAeFw0xNjEwMDcwMjA3MTRaFw0xNzEwMDcwODA3MTRaMDcxNTAzBgNVBAMeLABEAEUAUwBLAFQATwBQAC0AUgA1AE8AUgBGAEIAMQBcAEoAZQByAGUAbQB5MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCZezq8/fvbB7MOqqaSsEWQzA+5UwufeaQqU9B92n1SuO61urLEXb14w4styy+1oRbl2ZTTNs1WlkhDHJQZH9w+N4iqRxfUTX+wLM/JRfnfrmiscPtrCanAbE1zAZIvwmwNY+QHFFeCgUvCNSM5NRDbcguHCmuUfwdeC2WayDbwYQIDAQABMA0GCSqGSIb3DQEBCwUAA4GBACQ7NyfKeeOCNI30UUOgjvwpimosRe4K726uQ29w1nXcUigJGVCjtU3GvICk81FSzRlxh5bBNpiu/IDqYK72HSJt3EIOL9QPXLaebmv17mRxiKmV1WT+CdAPID25CgyMQtjL/1kvIjLKI81EQqSWLP40BASKYitZTJhLBiti1Dp0</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
