@@ -27,7 +27,7 @@ namespace pwmanager {
         }
 
         public static void saveFile(string password, string path, List<Info> info) {
-            //try {
+            try {
                 using (StreamWriter sw = new StreamWriter(path)) {
                     //Write password hash first line
                     sw.WriteLine(PasswordHash.HashPassword(password));
@@ -48,24 +48,22 @@ namespace pwmanager {
 
                     sw.WriteLine(PasswordHash.HashPassword(Encoding.Default.GetString(memStream.ToArray())));
                 }
-            /*}
+            }
             catch(Exception ex) {
                 MessageBox.Show("File save failed");
                 Console.WriteLine(ex.ToString());
-            }*/
+            }
         }
 
 
         public static List<Info> openFile(string password, string path) {
             using (StreamReader sr = new StreamReader(path)) {
                 string hash = sr.ReadLine();
-
+                MessageBox.Show(hash);
                 if (PasswordHash.ValidatePassword(password, hash)) {
                     string line;
-
+                    List<Info> userInfo = new List<Info>();
                     while ((line = sr.ReadLine()) != null) {
-                        List<Info> userInfo = new List<Info>();
-
                         if (line.Contains(":")) {
                             //It's a line of account info
                             string[] split = line.Split(':');
@@ -77,18 +75,19 @@ namespace pwmanager {
                             //Put the new Info object into a list
                             userInfo.Add(temp);
                         }
+                        else if (line == "") { }
                         else {
                             //It's the checksum
                             var binFormatter = new BinaryFormatter();
                             var memStream = new MemoryStream();
                             binFormatter.Serialize(memStream, userInfo);
-                     
+                            MessageBox.Show(Encoding.Default.GetString(memStream.ToArray()) + "\n" + line);
+
                             if (PasswordHash.ValidatePassword(Encoding.Default.GetString(memStream.ToArray()), line)) {
                                 //Hashes match, no tampering
                                 return userInfo;
                             }
                             else {
-                                MessageBox.Show("The file has been tampered with and cannot be opened.");
                                 return null;
                             }
                         }

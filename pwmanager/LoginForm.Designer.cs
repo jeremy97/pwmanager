@@ -23,7 +23,9 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pwLoginLbl = new System.Windows.Forms.Label();
             this.unlockBtn = new System.Windows.Forms.Button();
             this.pwText = new System.Windows.Forms.TextBox();
             this.fileLbl = new System.Windows.Forms.Label();
@@ -31,7 +33,6 @@
             this.createBtn = new System.Windows.Forms.Button();
             this.orLbl = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pwLoginLbl = new System.Windows.Forms.Label();
             this.pwCreateLbl = new System.Windows.Forms.Label();
             this.pwCreateText = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
@@ -51,6 +52,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(260, 115);
             this.panel1.TabIndex = 0;
+            // 
+            // pwLoginLbl
+            // 
+            this.pwLoginLbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pwLoginLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pwLoginLbl.Location = new System.Drawing.Point(3, 58);
+            this.pwLoginLbl.Name = "pwLoginLbl";
+            this.pwLoginLbl.Size = new System.Drawing.Size(61, 20);
+            this.pwLoginLbl.TabIndex = 4;
+            this.pwLoginLbl.Text = "Password";
+            this.pwLoginLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // unlockBtn
             // 
@@ -142,18 +155,6 @@
             this.panel2.Size = new System.Drawing.Size(260, 57);
             this.panel2.TabIndex = 3;
             // 
-            // pwLoginLbl
-            // 
-            this.pwLoginLbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pwLoginLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pwLoginLbl.Location = new System.Drawing.Point(3, 58);
-            this.pwLoginLbl.Name = "pwLoginLbl";
-            this.pwLoginLbl.Size = new System.Drawing.Size(61, 20);
-            this.pwLoginLbl.TabIndex = 4;
-            this.pwLoginLbl.Text = "Password";
-            this.pwLoginLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // pwCreateLbl
             // 
             this.pwCreateLbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -187,6 +188,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Unlock";
