@@ -43,17 +43,30 @@ namespace pwmanager {
             if (sfd.ShowDialog() == DialogResult.OK) {
                 string filePath = sfd.FileName;
                 refreshInfo();
+                
                 FileHandler.saveFile(pw, filePath, info);
             }
         }
 
         private void refreshInfo() {
+            dataGrid.CurrentCell = null;
             List<Info> temp = new List<Info>();
             foreach (DataGridViewRow row in dataGrid.Rows) {
-                if(row.Cells[1].Value != null) {
-                    temp.Add(new Info(row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString(), row.Cells[2].Value.ToString()));
+                Info info = new Info();
+                if (row.Cells["labelColumn"].Value != null) {
+                    info.label = row.Cells["labelColumn"].Value.ToString();
+                }
+                if (row.Cells["usernameColumn"].Value != null) {
+                    info.username = row.Cells["usernameColumn"].Value.ToString();
+                }
+                if (row.Cells["passwordColumn"].Value != null) {
+                    info.password = row.Cells["passwordColumn"].Value.ToString();
+                }
+                if (info.ToString() != "::") {
+                    temp.Add(info);
                 }
             }
+            info = temp;
         }
     }
 }

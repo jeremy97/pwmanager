@@ -16,5 +16,9 @@ namespace pwmanager {
         public string label { get; set; }
         public string username { get; set; }
         public string password { get; set; }
+
+        public string ToString() {
+            return label + ":" + username + ":" + password;
+        }
     }
 }

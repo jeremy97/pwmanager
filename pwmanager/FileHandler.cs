@@ -27,7 +27,7 @@ namespace pwmanager {
         }
 
         public static void saveFile(string password, string path, List<Info> info) {
-            try {
+            //try {
                 using (StreamWriter sw = new StreamWriter(path)) {
                     //Write password hash first line
                     sw.WriteLine(PasswordHash.HashPassword(password));
@@ -35,6 +35,7 @@ namespace pwmanager {
                     //Write all encrypted account details line by line
                     for (int i = 0; i < info.Count; i++) {
                         Info temp = info[i];
+                        MessageBox.Show(temp.ToString());
                         sw.WriteLine(Encrypt.EncryptString(temp.label, password) + ":" + Encrypt.EncryptString(temp.username, password) + ":"
                             + Encrypt.EncryptString(temp.password, password));
                     }
@@ -47,11 +48,11 @@ namespace pwmanager {
 
                     sw.WriteLine(PasswordHash.HashPassword(Encoding.Default.GetString(memStream.ToArray())));
                 }
-            }
+            /*}
             catch(Exception ex) {
                 MessageBox.Show("File save failed");
                 Console.WriteLine(ex.ToString());
-            }
+            }*/
         }
 
 
